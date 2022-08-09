@@ -1,6 +1,6 @@
 # Weird Algorithm
 
-[This is a link to the Problem](https://cses.fi/problemset/task/1068)
+[Link to Problem](https://cses.fi/problemset/task/1068)
 
 - Time Limit: ```1.00 s```
 - Memory Limit: ```512 MB```
