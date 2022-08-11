@@ -4,20 +4,20 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
-typedef long long unsigned int ll;
  
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    
-    unsigned int n;
+
+    int n;
     cin >> n;
-    for(ll i = n; ; i = (i%2? (3*i+1):(i/2)))
+    int num = 0;
+    while(n>0)
     {
-        std::cout << i << (i==1? '\n':' ');
-        if(i==1) break;
+        n/=5;
+        num+=n;
     }
+    cout << num;
     return 0;
 }
