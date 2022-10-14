@@ -1,6 +1,11 @@
+/*
+ * AUTHOR: ASHWIN ABRAHAM
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
-using ull = uint64_t;
+using ull = int64_t;
+
 
 int main()
 {
@@ -18,21 +23,17 @@ int main()
     sort(des_sizes.begin(), des_sizes.end());
     sort(av_sizes.begin(), av_sizes.end());
 
-    int lbound = 0, rbound = 0;
-    vector<pair<int, int>> ranges(n);
-    for(int i = 0; i<n; ++i)
+    int dptr = 0;
+    int max_num = 0;
+    for(int aptr = 0; aptr < m; ++aptr)
     {
-        if(i == 0)
+        while (dptr < n && av_sizes[aptr] > des_sizes[dptr] + k) ++dptr;
+        if(dptr >= n) break;
+        else if(av_sizes[aptr] >= des_sizes[dptr] - k)
         {
-            while(lbound >= 0 && av_sizes[lbound] >= des_sizes[i] - k) --lbound;
-            ++lbound;
-            while(rbound < m && av_sizes[rbound] <= des_sizes[i] + k) ++rbound;
-            --rbound;
-            ranges[i] = pair<int, int>(lbound, rbound);
-        }
-        else
-        {
-            while(lbound < m && av_sizes[])
+            ++max_num;
+            ++dptr;
         }
     }
+    cout << max_num << '\n';
 }
