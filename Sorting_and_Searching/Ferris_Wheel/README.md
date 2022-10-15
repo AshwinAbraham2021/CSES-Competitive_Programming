@@ -5,6 +5,5 @@
 - Time Limit: ```1.00 s```
 - Memory Limit: ```512 MB```
 
-<!-- - Average Time Taken: ```0.044 s```
-- Maximum Time Taken: ```0.11 s``` -->
-- Currently, Time Limit is being exceeded
+- Average Time Taken: ```0.03 s```
+- Maximum Time Taken: ```0.06 s```
