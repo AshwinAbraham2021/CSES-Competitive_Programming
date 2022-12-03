@@ -5,5 +5,5 @@
 - Time Limit: ```1.00 s```
 - Memory Limit: ```512 MB```
 
-- Average Time Taken: ```0.022 s```
-- Maximum Time Taken: ```0.06 s```
+- Average Time Taken: ```0.063 s```
+- Maximum Time Taken: ```0.23 s```

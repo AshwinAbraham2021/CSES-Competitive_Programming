@@ -6,18 +6,6 @@
 using namespace std;
 using ll = int64_t;
 
-// ll smallest_not_poss(ll* arr, int n, ll k) // returns smallest sum > k that cannot be constructed by first n coins in arr
-// {
-//     if(n == 1)
-//     {
-//         if(arr[0] == k+1) return k+2;
-//         return k+1;
-//     }
-//     ll prev_sum = smallest_not_poss(arr, n-1, k);
-//     if(prev_sum < arr[n-1]) return prev_sum;
-//     if(prev_sum - arr[n-1] > k)
-// }
-
 
 int main()
 {
@@ -26,12 +14,36 @@ int main()
 
     int n;
     cin >> n;
-    vector<ll> coins(n);
+    multiset<ll> coins;
+    set<ll> unq_coins;
     for(int i = 0; i<n; ++i)
     {
-        cin >> coins[i];
+        ll x;
+        cin >> x;
+        coins.insert(x);
+        unq_coins.insert(x);
     }
-    sort(coins.begin(), coins.end());
-
-    cout << smallest_not_poss(&coins[0], n);
+    if(coins.count(1) == 0)
+    {
+        cout << "1\n";
+        return 0;
+    }
+    ll max_consec_from0 = coins.count(1);
+    for(auto x : unq_coins)
+    {
+        if(x == 1) continue;
+        if(x > max_consec_from0 + 1)
+        {
+            cout << max_consec_from0 + 1 << '\n';
+            return 0;
+        }
+        // 1, 2, ... m
+        //      x, x + 1 ... x + m
+        //                  2x, 2x + 1 ... 2x + m
+        //                        ...
+        //                          nx, nx + 1, ... nx + m
+        // No number between 1, nx + m is missed (because x <= m + 1)
+        max_consec_from0 += x*coins.count(x);
+    }
+    cout << max_consec_from0 + 1 << '\n';
 }
