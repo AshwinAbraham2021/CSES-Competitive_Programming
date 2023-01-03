@@ -1,6 +1,6 @@
 # Missing Coin Sum
 
-[Link to Problem](https://cses.fi/problemset/task/2183)
+[Link to Problem](https://cses.fi/problemset/task/2216)
 
 - Time Limit: ```1.00 s```
 - Memory Limit: ```512 MB```
